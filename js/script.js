@@ -41,46 +41,53 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
   revealItems.forEach(element => element.classList.add('visible'));
 }
 
+
 const form = document.querySelector('#contactForm');
+
 if (form) {
-  // Preselect a service when a visitor follows a service-specific enquiry link.
+  // Preselect a service when a visitor follows a service-specific link.
   const serviceSelect = form.querySelector('[name="service-required"]');
   const requestedService = new URLSearchParams(window.location.search).get('service');
+
   if (serviceSelect && requestedService) {
-    const matchingOption = Array.from(serviceSelect.options).find(option => option.text.toLowerCase() === requestedService.toLowerCase());
-    if (matchingOption) serviceSelect.value = matchingOption.value;
+    const matchingOption = Array.from(serviceSelect.options).find(
+      option => option.text.toLowerCase() === requestedService.toLowerCase()
+    );
+
+    if (matchingOption) {
+      serviceSelect.value = matchingOption.value;
+    }
   }
 
-  // Local preview fallback: on the deployed Netlify site, allow Netlify Forms to receive the POST.
-  const isLocalPreview = window.location.protocol === 'file:' ||
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1';
+  // Send quote enquiries directly through WhatsApp.
+  form.addEventListener('submit', event => {
+    event.preventDefault();
 
-  if (isLocalPreview) {
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      const values = new FormData(form);
-      const lines = [
-        'Hello Tidyhaul, I would like to request a cleaning quote.',
-        `Full name: ${values.get('full-name') || ''}`,
-        `Company / organisation: ${values.get('organisation') || 'Not provided'}`,
-        `Email: ${values.get('email') || ''}`,
-        `Phone: ${values.get('phone') || ''}`,
-        `Facility location: ${values.get('facility-location') || ''}`,
-        `Service required: ${values.get('service-required') || ''}`,
-        `Number of branches / facilities: ${values.get('number-of-facilities') || 'Not provided'}`,
-        `Cleaning frequency: ${values.get('cleaning-frequency') || ''}`,
-        `Additional information: ${values.get('additional-information') || 'None'}`
-      ];
-      window.open(`https://wa.me/2349167689657?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
-      const note = document.querySelector('#formNote');
-      if (note) note.textContent = 'Your enquiry has been prepared in WhatsApp. Please press Send in WhatsApp to deliver it to Tidyhaul.';
-    });
-  }
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const values = new FormData(form);
+
+    const lines = [
+      'Hello Tidyhaul, I would like to request a cleaning quote.',
+      `Full name: ${values.get('full-name') || ''}`,
+      `Company / organisation: ${values.get('organisation') || 'Not provided'}`,
+      `Email: ${values.get('email') || ''}`,
+      `Phone: ${values.get('phone') || ''}`,
+      `Facility location: ${values.get('facility-location') || ''}`,
+      `Service required: ${values.get('service-required') || ''}`,
+      `Number of branches / facilities: ${values.get('number-of-facilities') || 'Not provided'}`,
+      `Cleaning frequency: ${values.get('cleaning-frequency') || ''}`,
+      `Additional information: ${values.get('additional-information') || 'None'}`
+    ];
+
+    const whatsappUrl =
+      `https://wa.me/2349167689657?text=${encodeURIComponent(lines.join('\n'))}`;
+
+    window.location.href = whatsappUrl;
+  });
 }
 
 document.querySelectorAll('[data-year]').forEach(element => {
