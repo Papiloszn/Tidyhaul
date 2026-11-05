@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Tidyhaul | Request a Quote</title>
+<meta name="description" content="Request a quote from Tidyhaul for janitorial services, commercial facility cleaning or residential cleaning. Share your facility details and preferred cleaning frequency.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Tidyhaul | Request a Quote">
+<meta property="og:description" content="Request a quote from Tidyhaul for janitorial services, commercial facility cleaning or residential cleaning. Share your facility details and preferred cleaning frequency.">
+<meta name="theme-color" content="#29463d">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body><header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Tidyhaul home">Tidyhaul</a>
+    <nav id="primary-navigation" class="nav-links" aria-label="Primary navigation"><a class="" href="index.html">Home</a><a class="" href="about.html">About Us</a><a class="" href="services.html">Services</a><a class="active" href="contact.html">Contact Us</a><a class="mobile-quote" href="contact.html">Request a Quote</a></nav>
+    <div class="nav-cta"><a class="btn btn-primary" href="contact.html">Request a Quote <span>↗</span></a></div>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+<section class="page-hero"><div class="container reveal"><span class="eyebrow">Contact Tidyhaul</span><h1>Let's Discuss Your Cleaning Requirements.</h1><p>Tell us about your organisation, facility or home. We welcome corporate, commercial and residential cleaning enquiries.</p></div></section>
+<section class="section"><div class="container contact-grid">
+  <div class="contact-card reveal"><span class="eyebrow">Get in touch</span><h2 class="contact-heading">Request a Quote</h2><p class="contact-intro">Share a few details about your cleaning requirements and the Tidyhaul team can follow up with you.</p>
+    <div class="contact-item"><div class="contact-icon">☎</div><div><small>Phone</small><a href="tel:+2349167689657">+234 916 768 9657</a></div></div>
+    <div class="contact-item"><div class="contact-icon">✉</div><div><small>Email</small><a href="mailto:tidyhaul.ng@gmail.com">tidyhaul.ng@gmail.com</a></div></div>
+    <div class="contact-item"><div class="contact-icon">◉</div><div><small>WhatsApp</small><a class="btn btn-outline" href="https://wa.me/2349167689657?text=Hello%20Tidyhaul%2C%20I%20would%20like%20to%20discuss%20my%20cleaning%20requirements." target="_blank" rel="noopener">Start a chat</a></div></div>
+    <p class="contact-assurance">For recurring janitorial contracts, please include your facility location and preferred cleaning frequency.</p>
+  </div>
+  <form class="form reveal" id="contactForm" name="tidyhaul-quote" method="POST" action="thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="tidyhaul-quote">
+    <p class="hidden-field"><label>Do not fill this out: <input name="bot-field"></label></p>
+    <div class="field"><label for="name">Full Name <span aria-hidden="true">*</span></label><input id="name" name="full-name" autocomplete="name" required placeholder="Your full name"></div>
+    <div class="field"><label for="organisation">Company / Organisation Name</label><input id="organisation" name="organisation" autocomplete="organization" placeholder="Your company or organisation"></div>
+    <div class="field"><label for="email">Email Address <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+    <div class="field"><label for="phone">Phone Number <span aria-hidden="true">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+234..."></div>
+    <div class="field"><label for="location">Facility Location <span aria-hidden="true">*</span></label><input id="location" name="facility-location" required placeholder="City / area / facility address"></div>
+    <div class="field"><label for="service">Service Required <span aria-hidden="true">*</span></label><select id="service" name="service-required" required><option value="">Select a service</option><option>Janitorial Services</option><option>Office and Facility Cleaning</option><option>Deep and Specialised Commercial Cleaning</option><option>Residential Cleaning</option><option>Move-In / Move-Out Cleaning</option><option>Event Cleaning</option></select></div>
+    <div class="field"><label for="branches">Number of Branches or Facilities</label><input id="branches" name="number-of-facilities" type="number" min="1" placeholder="Optional"></div>
+    <div class="field"><label for="frequency">Cleaning Frequency <span aria-hidden="true">*</span></label><select id="frequency" name="cleaning-frequency" required><option value="">Select frequency</option><option>Daily</option><option>Multiple times per week</option><option>Weekly</option><option>Bi-weekly</option><option>Monthly</option><option>One-off / project-based</option><option>Not sure yet</option></select></div>
+    <div class="field full"><label for="message">Additional Information</label><textarea id="message" name="additional-information" placeholder="Tell us about the facility, size, areas to be cleaned or any other requirements."></textarea></div>
+    <div class="field full"><button class="btn btn-primary" type="submit">Request a Quote ↗</button><p class="form-note" id="formNote">Your enquiry will be submitted securely through the website when hosted on Netlify. For local testing, the form will prepare a WhatsApp message instead.</p></div>
+  </form>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">Tidyhaul</a>
+        <p>Reliable janitorial and commercial cleaning solutions for businesses, commercial facilities and homes.</p>
+      </div>
+      <div><div class="footer-title">Quick Links</div>
+        <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="contact.html">Contact Us</a><a href="contact.html">Request a Quote</a></div>
+      </div>
+      <div><div class="footer-title">Our Services</div>
+        <div class="footer-links"><a href="services.html#janitorial">Janitorial Services</a><a href="services.html#office-facility">Office &amp; Facility Cleaning</a><a href="services.html#deep-commercial">Deep &amp; Specialised Commercial Cleaning</a><a href="services.html#residential">Residential Cleaning</a><a href="services.html#move">Move-In / Move-Out Cleaning</a><a href="services.html#event">Event Cleaning</a></div>
+      </div>
+      <div><div class="footer-title">Contact Tidyhaul</div>
+        <div class="footer-links"><a href="tel:+2349167689657">+234 916 768 9657</a><a href="mailto:tidyhaul.ng@gmail.com">tidyhaul.ng@gmail.com</a><button class="btn btn-orange" type="button" data-whatsapp>Chat on WhatsApp</button></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year>2026</span> Tidyhaul Nigeria Enterprises. All Rights Reserved.</span><span>Clean, hygienic and professional environments.</span></div>
+  </div>
+</footer>
+<a class="whatsapp" href="https://wa.me/2349167689657?text=Hello%20Tidyhaul%2C%20I%20would%20like%20to%20request%20a%20cleaning%20quote." target="_blank" rel="noopener" aria-label="Chat with Tidyhaul on WhatsApp">✆</a><script src="js/script.js"></script></body></html>
